@@ -1,4 +1,4 @@
-html > body {
+html>body {
   margin: 0 !important;
 }
 
@@ -6,13 +6,20 @@ html > body {
   padding: 1rem 1rem;
 }
 
-.notification pre {
-  background-color: inherit;
+.notification {
+  background-color: blue;
   color: white;
   font-size: 16px;
   line-height: normal;
+  width: 75%;
+  padding: 20px;
+  border-radius: 5px;
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0px;
 }
-
+ 
 div.color-line {
   width: 160px;
   height: 8px;
@@ -31,6 +38,7 @@ div.color-line {
     font-size: 20px;
     margin-right: 8px;
   }
+
   .title {
     letter-spacing: 0px;
     font-weight: normal;
@@ -45,6 +53,7 @@ div.color-line {
   line-height: 1.125;
   word-break: break-word;
 }
+
 .sub-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -55,40 +64,52 @@ div.color-line {
 header {
   font-weight: bold;
   font-family: Arial;
+
   span {
     letter-spacing: 0px;
+
     &.tour {
       color: #fff;
     }
+
     &.of {
       color: #ccc;
     }
+
     &.heroes {
       color: $primary-light;
     }
   }
+
   .navbar-item.nav-home {
     border: 3px solid transparent;
     border-radius: 0%;
+
     &:hover {
       border-right: 3px solid $primary-light;
       border-left: 3px solid $primary-light;
     }
   }
+
   .fab {
     font-size: 24px;
-    &.js-logo {
-      color: $primary-light;
+    width: 20px;
+  }
+
+  .icon{
+
+    &:hover {
+      fill: $primary;
     }
   }
+
   .buttons {
-    i.fab {
-      color: #fff;
-      margin-left: 20px;
-      margin-right: 10px;
-      &:hover {
-        color: $primary-light;
-      }
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: #fff;
+    &:hover {
+      color: $primary-light;
     }
   }
 }
@@ -99,8 +120,17 @@ header {
   }
 }
 
+.content {
+  background-color: $shade-light;
+  width: 75%;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0px 0px;
+  padding: 20px;
+}
+
 .content-title-group {
   margin-bottom: 16px;
+
   h2 {
     border-left: 16px solid $primary;
     border-bottom: 2px solid $primary;
@@ -110,33 +140,53 @@ header {
     text-transform: uppercase;
     color: #555;
     letter-spacing: 0px;
+
     &:hover {
       color: $link;
     }
   }
+
+  h3 {
+    border-left: 16px solid $primary;
+    border-bottom: 2px solid $primary;
+    padding-left: 8px;
+    padding-right: 16px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 0px;
+
+    &:hover {
+      color: $link;
+    }
+  }
+
   button.button {
     border: 0;
     color: #999;
+
     &:hover {
       color: $link;
     }
   }
 }
+
 ul.list {
   box-shadow: none;
 }
+
 div.card-content {
-  background-color: $shade-light;
   .name {
     font-size: 28px;
     color: #000;
   }
+
   .description {
     font-size: 20px;
     color: #999;
   }
-  background-color: $shade-light;
 }
+
 .card {
   margin-bottom: 2em;
 }
@@ -153,15 +203,39 @@ p.card-header-title {
   display: block;
   padding-left: 24px;
 }
+
+.card-footer {
+  background-color: $shade-light;
+  width: 75%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 0px 0px 5px 5px;
+}
+
 .card-footer button {
   font-size: 16px;
+
   i {
     margin-right: 10px;
   }
+
   color: #888;
+
   &:hover {
-    color: $link;
+    background: $primary;
+    color: #fff;
+    border: 1px solid $primary;
   }
+}
+
+.card-footer-item {
+  width: 50%;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid #ccc;
 }
 
 .modal-card-foot button {
@@ -176,20 +250,93 @@ p.card-header-title {
 
 .field {
   margin-bottom: 0.75rem;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+}
+
+.field-label-items {
+  display: flex;
+  align-items: center;
+}
+
+.field-label-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .navbar-burger {
   margin-left: auto;
 }
 
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 button.link {
+  cursor: pointer;
+}
+
+.burger {
   background: none;
   border: none;
   cursor: pointer;
+  display: none;
+}
+
+#power {
+  padding: 8px 8px 8px 2px;
+  border: 1px solid $vue-light;
 }
 
 input.invalid,
 textarea.invalid,
 select.invalid {
   border-left: 10px red solid !important;
+}
+
+.list-item {
+  color: #000;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &.is-active {
+    background-color: $accent-color;
+    border-radius: 0;
+    border-top: #fff solid 1px;
+    border-bottom: #fff solid 1px;
+    color: #fff;
+  }
+}
+
+label.input {
+  background-color: #e5e5e5;
+}
+
+.input {
+  border: 2px solid #ccc;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+p.comment {
+  margin: 8px;
+}
+
+.navbar {
+  background: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
